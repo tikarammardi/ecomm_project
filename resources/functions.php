@@ -2,6 +2,12 @@
 
 //helper functions
 
+function last_id() {
+    global $connection;
+
+    return mysqli_insert_id($connection);
+}
+
 function set_message($msg) {
     if(!empty($msg)) {
         $_SESSION['message'] = $msg;
