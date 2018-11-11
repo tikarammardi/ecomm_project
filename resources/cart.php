@@ -1,4 +1,4 @@
-<?php require_once("config.php") ?>
+<?php require_once("config.php"); ?>
 
 
 
@@ -57,6 +57,7 @@ if(isset($_GET['add'])) {
     $item_number = 1;
     $amount = 1;
     $quantity = 1;
+    $sub = 0;
 
     foreach($_SESSION as $name => $value) {
 
@@ -70,11 +71,14 @@ if(isset($_GET['add'])) {
                 confirm($query);
             
                 while($row = fetch_array($query)) {
+                    $product_image = display_image($row['product_image']);
                     $sub = $row['product_price'] * $value;
                     $item_quantity += $value;
                     $product = <<<DELIMETER
                     <tr>
-                    <td>{$row['product_title']}</td>
+                    <td>{$row['product_title']} <br>
+                    <img width="100" src ="../resources/{$product_image}">
+                    </td>
                     <td>{$row['product_price']}</td>
                     <td>{$value}</td>
                     <td>{$sub}</td>
