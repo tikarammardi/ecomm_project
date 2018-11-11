@@ -3,6 +3,7 @@
 <div class="row">
 <h1 class="page-header">
    All Orders
+   <h4 class="bg-success"><?php display_message(); ?></h4>
 
 </h1>
 </div>

@@ -123,7 +123,7 @@ DELIMETER;
 
 
 
-     function report() {
+     function process_transaction() {
 
         global $connection;
 

@@ -6,7 +6,7 @@
 
     <?php
        
-            report();
+            process_transaction();
             //session_destroy();
 
    
