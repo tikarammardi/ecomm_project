@@ -1,8 +1,10 @@
-<div class="col-md-3">
-                <p class="lead">Shop Name</p>
-                <div class="list-group">
-
-                <?php get_categories();?>
+<div class="row">
                     
-             </div>
-            </div>
+                    <div class="col-md-3">
+                            <p class="lead">Shop Name</p>
+                            <div class="list-group">
+            
+                            <?php get_categories();?>
+                    </div>
+                </div>     
+</div>

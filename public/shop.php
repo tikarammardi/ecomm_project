@@ -14,20 +14,21 @@
         <hr>
 
         <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
+             
+            
+           
                 <h3>Latest Features</h3>
-            </div>
-        </div>
+        
+        
         <!-- /.row -->
 
         <!-- Page Features -->
        
-        <div class="row text-center">
+        <div class="row ">
         <?php get_products_in_shop_page(); ?>
             
 
-        
+</div>
 
         </div>
         <!-- /.row -->

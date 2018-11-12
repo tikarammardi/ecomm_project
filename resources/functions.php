@@ -143,15 +143,13 @@ function get_products_in_shop_page() {
     while($row = fetch_array($query)) {
         $product_image = display_image($row['product_image']);
         $product_category = <<<DELIMETER
-        <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail">
-            <a href="item.php?id={$row['product_id']}" ><img src="../resources/{$product_image}" alt="img"> </a>
-            <div class="caption">
-                <h4 class="pull-right">{$row['product_price']}</h4>
-                <h4><a href="item.php?id={$row['product_id']}">&#36;{$row['product_title']}</a>
-                </h4>
-                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                <a class="btn btn-primary" target="_blank" href="../resources/cart.php?add={$row['product_id']}">Add to Cart</a>
+        <div class="col s12 m6 l3 ">
+        <div class="card">
+            <a class="card-image" href="item.php?id={$row['product_id']}" ><img src="../resources/{$product_image}" alt="img"> </a>
+            <h4 class="card-title flow-text center-align"><a class="black-text"  href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
+            <h4 class="flow-text center-align">&#8377;{$row['product_price']}</h4>
+            <div class="card-action">
+           <a class="btn waves-effect waves-light" target="_blank" href="../resources/cart.php?add={$row['product_id']}">Add to Cart <i class="material-icons right">shopping_cart</i></a>
             </div>
         
         </div>
