@@ -327,6 +327,172 @@ DELIMETER;
 
     }
 }
-//**********************************************888888***************** */
+//**********************************************888888*****Update functio************ */
+
+
+function update_product() {
+
+    if(isset($_POST['update'])) {
+
+        
+    
+       $product_title           = escape_string($_POST['product_title']);
+       $product_category_id     = escape_string($_POST['product_category_id']);
+       $product_price           = escape_string($_POST['product_price']);
+       $product_quantity        = escape_string($_POST['product_quantity']);
+       $product_description     = escape_string($_POST['product_description']);
+       $short_desc              = escape_string($_POST['short_desc']);
+       $product_image           = escape_string($_FILES['file']['name']);
+       $image_temp_location     = escape_string($_FILES['file']['tmp_name']);
+
+       if(empty($product_image)) {
+           $get_pic = query ("SELECT product_image FROM products WHERE product_id = " .escape_string($_GET['id']) . " ");
+           confirm($get_pic);
+           while($pic = fetch_array($get_pic)) {
+                $product_image = $pic['product_image'];
+           }
+       }
+
+       move_uploaded_file($image_temp_location, UPLOAD_DIR . DS . $product_image);
+        
+       $query = "UPDATE products SET ";
+       $query .= "product_title         = '{$product_title}'        ,";
+       $query .= "product_category_id   = '{$product_category_id}'  ,";
+       $query .= "product_price         = '{$product_price}'        ,";
+       $query .= "product_quantity      = '{$product_quantity}'     ,";
+       $query .= "product_description   = '{$product_description}'  ,";
+       $query .= "short_desc            = '{$short_desc}'           ,";
+       $query .= "product_image         = '{$product_image}'         ";
+       $query .= "WHERE product_id = " . escape_string($_GET['id']);
+       
+
+        $send_update_query = query($query);
+        confirm($send_update_query);
+        set_message("New Product has been updated");
+
+        redirect("index.php?products");
+
+    }
+}
+
+
+/*******************************Category in admin*********** */
+
+
+function show_category_in_admin() {
+   
+    $category_query = query("SELECT * FROM categories");
+    confirm($category_query);
+
+    while($row = fetch_array($category_query)) {
+        $cat_id = $row['cat_id'];
+        $cat_title = $row['cat_title'];
+
+        $category = <<<DELIMETER
+        <tr>
+            <td>{$cat_id}</td>
+            <td>{$cat_title}</td>
+            <td> <td><a class = "btn btn-danger " href="../../resources/templates/back/delete_category.php?id={$row['cat_id']}" ><span class="glyphicon glyphicon-remove"></span></a></td></td>
+        </tr>
+DELIMETER;
+
+echo $category;
+    }
+}
+
+
+function add_category() {
+    
+    if(isset($_POST['add_category'])) {
+        
+        $cat_title = escape_string($_POST['cat_title']);
+        if(empty($cat_title) || $cat_title == " ") {
+            echo "<p> CAnnot be empty </p>";
+        }else {
+
+        
+        $insert_cat = query("INSERT INTO categories(cat_title) VALUES('{$cat_title}')");
+        confirm($insert_cat);
+        set_message("Category created");
+        
+        }
+    }
+}
+
+
+
+/**************************************Addubg users***************** */
+
+function display_users() {
+   
+    $category_query = query("SELECT * FROM users");
+    confirm($category_query);
+
+    while($row = fetch_array($category_query)) {
+        $user_id = $row['user_id'];
+        $username = $row['username'];
+        $email = $row['email'];
+        $password = $row['password'];
+
+        $user = <<<DELIMETER
+        <tr>
+            <td>{$user_id}</td>
+            <td>{$username}</td>
+            <td>{$email}</td>
+            <td> <td><a class = "btn btn-danger " href="../../resources/templates/back/delete_user.php?id={$row['user_id']}" ><span class="glyphicon glyphicon-remove"></span></a></td></td>
+        </tr>
+DELIMETER;
+
+echo $user;
+    }
+}
+
+
+function add_user() {
+    if(isset($_POST['add_user'])) {
+
+    $username  =   escape_string($_POST['username']);
+    $email     =   escape_string($_POST['email']);
+    $password  =   escape_string($_POST['password']);
+    //$user_photo = escape_string($_FILES['file']['name']);
+    //$photo_temp = escape_string($_FILES['file']['tmp_name']);
+
+    //move_uploaded_file(photo_temp, UPLOAD_DIR . DS . $user_photo);
+
+    $query = query("INSERT INTO users(username, email, password) VALUES('{$username}', '{$email}', '{$password}')");
+    confirm($query);
+    redirect("index.php?users");
+
+    }
+}
+
+
+/****************get report */
+
+function get_reports() {
+
+    
+
+    $query = query("SELECT * FROM reports");
+    confirm($query);
+    //heredoc
+    while($row = fetch_array($query)) {
+    
+    $report =<<<DELIMETER
+                    <tr>
+                        <td>{$row['report_id']}</td>
+                        <td>{$row['product_id']} <br>
+                        <td>{$row['order_id']}</td>
+                        <td>{$row['product_price']} <br>
+                        <td>{$row['product_title']}</td>
+                        <td>{$row['product_quantity']} <br>
+                        <td>{$row['order_id']}</td>
+                      
+                        <td><a class = "btn btn-danger " href="../../resources/templates/back/delete_report.php?id={$row['report_id']}" ><span class="glyphicon glyphicon-remove"></span></a></td>
+                    </tr>
+DELIMETER;
+        echo $report;
+        }
+    }
 
 ?>
