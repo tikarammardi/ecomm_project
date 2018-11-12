@@ -9,22 +9,25 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="stylesheet" href="css/style.css">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Ecommerce</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
 
-   
+
+
 
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <?php include(TEMPLATE_FRONT . DS . "top_nav.php")?>
+    <nav class="black darken-4">
+        <?php include(TEMPLATE_FRONT . DS . "top_nav.php")?>
     </nav>
