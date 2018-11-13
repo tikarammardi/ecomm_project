@@ -19,7 +19,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            <p class="text-center">Created with &#10084; by Tikaram Mardi </p>
+            <p class="text-center">Created with <span class="red-text">&#10084; </span>by Tikaram Mardi </p>
 
         </div>
     </div>

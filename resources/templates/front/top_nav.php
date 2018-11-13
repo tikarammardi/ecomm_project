@@ -1,7 +1,7 @@
 <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="nav-wrapper">
-                <a href="index.php" class="brand-logo">YourShop</a>
+                <a href="index.php" class="brand-logo">BAHA</a>
                 <a class="button-collapse" data-activates="mobile-nav" href="#">
                     <i class="material-icons">menu</i>
                 </a>
