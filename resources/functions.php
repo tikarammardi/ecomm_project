@@ -68,7 +68,7 @@ function get_products() {
     while($row = fetch_array($query)) {
         $product_image = display_image($row['product_image']);
        $product = <<<DELIMETER
-       <div class="col s12 m6 l3 ">
+       <div class="col s10 m6 l3 ">
        <div class="card">
             <a class="card-image" href="item.php?id={$row['product_id']}" ><img src="../resources/{$product_image}" alt="image is here"> </a>
             <h4 class="card-title flow-text center-align"><a class="black-text"  href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
@@ -94,8 +94,15 @@ function get_categories() {
     while($row = fetch_array($query)) {
         
         $category_links = <<<DELIMETER
-        <a href="category.php?id={$row['cat_id']}" class="list-group-item">{$row['cat_title']}</a>
-     
+             
+
+   
+
+           
+        <a class="btn waves-effect" href="category.php?id={$row['cat_id']}" class=" ">{$row['cat_title']}</a>
+    
+
+
 DELIMETER;
         
         echo $category_links;
@@ -141,7 +148,7 @@ function get_products_in_shop_page() {
     while($row = fetch_array($query)) {
         $product_image = display_image($row['product_image']);
         $product_category = <<<DELIMETER
-        <div class="col s12 m6 l3 ">
+        <div class="col s10 m6 l2 ">
         <div class="card">
             <a class="card-image" href="item.php?id={$row['product_id']}" ><img src="../resources/{$product_image}" alt="img"> </a>
             <h4 class="card-title flow-text center-align"><a class="black-text"  href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
