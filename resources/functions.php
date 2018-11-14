@@ -264,7 +264,7 @@ $product =<<<DELIMETER
                     <td>{$category}</td>
                     <td>{$row['product_price']}</td>
                     <td>{$row['product_quantity']}</td>
-                    <td><a class="btn red" href="../../resources/templates/back/delete_product.php?id={$row['product_id']}" > Remove</a></td>
+                    <td><a class="btn btn-danger" href="../../resources/templates/back/delete_product.php?id={$row['product_id']}" > Remove</a></td>
                 </tr>
 DELIMETER;
     echo $product;
@@ -395,7 +395,7 @@ function show_category_in_admin() {
         <tr>
             <td>{$cat_id}</td>
             <td>{$cat_title}</td>
-            <td> <td><a class = "btn red " href="../../resources/templates/back/delete_category.php?id={$row['cat_id']}" > Remove</a></td></td>
+            <td> <td><a class = "btn btn-danger " href="../../resources/templates/back/delete_category.php?id={$row['cat_id']}" > Remove</a></td></td>
         </tr>
 DELIMETER;
 
@@ -442,7 +442,7 @@ function display_users() {
             <td>{$user_id}</td>
             <td>{$username}</td>
             <td>{$email}</td>
-            <td> <td><a class = "btn red " href="../../resources/templates/back/delete_user.php?id={$row['user_id']}" > Remove</a></td></td>
+            <td> <td><a class = "btn btn-danger " href="../../resources/templates/back/delete_user.php?id={$row['user_id']}" > Remove</a></td></td>
         </tr>
 DELIMETER;
 

@@ -16,7 +16,7 @@
   <input type="hidden" name="cmd" value="_cart">
   <input type="hidden" name="business" value="tikarammardi@business.com">
   <input type="hidden" name="currency_code" value="INR">
-    <table class="table table-striped">
+    <table class="table striped">
         <thead>
           <tr>
            <th>Product</th>
@@ -40,7 +40,7 @@
 <div class="col-xs-4 pull-right ">
 <h2>Cart Totals</h2>
 
-<table class="table table-bordered" cellspacing="0">
+<table class="table " cellspacing="0">
 
 <tr class="cart-subtotal">
 <th>Items:</th>

@@ -84,9 +84,9 @@ if(isset($_GET['add'])) {
                     <td>{$sub}</td>
                  
                     <td>
-                    <a class = "btn btn-warning" href="../resources/cart.php?remove={$row['product_id']}"><span class="glyphicon glyphicon-minus"></span></a>
-                    <a class = "btn btn-success" href="../resources/cart.php?add={$row['product_id']}"><span class="glyphicon glyphicon-plus"></span></a>
-                    <a class = "btn btn-danger" href="../resources/cart.php?delete={$row['product_id']}"><span class="glyphicon glyphicon-remove"></span></a>
+                    <a class = " " href="../resources/cart.php?remove={$row['product_id']}"><i class="material-icons ">remove</i></a>
+                    <a class = "" href="../resources/cart.php?add={$row['product_id']}"><i class="material-icons">add</i></a>
+                    <a class = "red-text" href="../resources/cart.php?delete={$row['product_id']}">  <i class="material-icons">close</i></a>
                     </td>
                 </tr>
 
