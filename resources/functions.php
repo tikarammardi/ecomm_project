@@ -124,8 +124,8 @@ function get_products_in_cat_page() {
         <div class="thumbnail">
             <a href="item.php?id={$row['product_id']}" ><img src="../resources/{$product_image}" alt="img"> </a>
             <div class="caption">
-                <h4 class="pull-right">{$row['product_price']}</h4>
-                <h4><a href="item.php?id={$row['product_id']}">&#36;{$row['product_title']}</a>
+                <h4 class="pull-right">&#8377;{$row['product_price']}</h4>
+                <h4><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a>
                 </h4>
                 <p>See more snippets like this online store item at <a target="_parent" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
                 <a class="btn btn-primary" target="_parent" href="../resources/cart.php?add={$row['product_id']}">Add to Cart <i class="material-icons right">shopping_cart</i></a>

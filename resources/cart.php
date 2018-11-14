@@ -79,9 +79,9 @@ if(isset($_GET['add'])) {
                     <td>{$row['product_title']} <br>
                     <img width="100" src ="../resources/{$product_image}">
                     </td>
-                    <td>{$row['product_price']}</td>
+                    <td>&#8377;{$row['product_price']}</td>
                     <td>{$value}</td>
-                    <td>{$sub}</td>
+                    <td>&#8377;{$sub}</td>
                  
                     <td>
                     <a class = " " href="../resources/cart.php?remove={$row['product_id']}"><i class="material-icons ">remove</i></a>
