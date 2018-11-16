@@ -512,12 +512,12 @@ DELIMETER;
             confirm($query);
             set_message("Congratulation {$name}! You have successfully registed.");
 
-            $_SESSION['name'] = $name;
+            
             redirect("index.php");
 
-        }else {
-            set_message("Oops! Something Went Wrong ! Try again later.");
         }
+
+       
     }
 
     function customer_login() {
@@ -533,7 +533,7 @@ DELIMETER;
             redirect("customer_login.php");
         }else {
             $_SESSION['name'] = $name;
-            set_message("Welcome {$name}");
+            
             redirect("index.php");
         
         }

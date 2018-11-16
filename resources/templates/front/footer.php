@@ -33,12 +33,20 @@
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('.button-collapse').sideNav();
+        $('.button-collapse').sideNav(); //for side navigatin
 
         $('.carousel.carousel-slider').carousel({
             fullWidth: true
-        });
+        }); // for our caurosel
+
+         $('.dropdown-button').dropdown({
+        constrainWidth: false,
+        hover: true,
+        belowOrigin: true,
+        alignment: 'left'
+      }); //for our dropdown menu
     });
+
 
     
 </script>

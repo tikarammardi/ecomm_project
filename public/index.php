@@ -4,11 +4,7 @@
 
 
 <?php include(TEMPLATE_FRONT . DS . "slider.php")?>
-<?php 
-       if(isset($_SESSION['name'])) {
-              display_message();
-       }
-?>
+
 
 <div class="container">
        <div class="row">

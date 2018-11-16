@@ -23,21 +23,44 @@
                     </li>
                   
                     <li>
-                        <a href="#">
-                            <i class="material-icons">person  </i> 
-                           </a>
-                          
+                        <a href="#!" class="dropdown-button" data-activates="my-dropdown"> 
+                            <i class="material-icons">person</i> 
+                        </a>
+                        
                     </li>
+                    <li><?php if(isset($_SESSION['name'])) echo $_SESSION['name']; ?></li>
+
+                   
+                    <li>
+                        <a href="#!" class="dropdown-button" data-activates="my-dropdown2">SignIn 
+                            
+                        </a>
+                        
+                    </li>
+                     
                     
+                    <li>
+                     <a href="register.php" class="btn waves-effect waves-light">Register</a>
+                    </li>
+                     <!--  DROPDOWN MENU -->
+                     
+                     <ul id="my-dropdown" class="dropdown-content">
+                        
+                            <li>
+                                <a href="customer_logout.php">Log Out</a>
+                            </li>
+                        </ul>
                   
 
-                     <!-- BUTTON LINK -->
-                     <li>
-                     <a href="login.php" class="btn waves-effect waves-light">Sign In</a>
-                 </li>
-                 <li>
-                     <a href="register.php" class="btn waves-effect waves-light">Register</a>
-                 </li>
+                    <ul id="my-dropdown2" class="dropdown-content">
+                        <li>
+                            <a href="login.php ">Admin</a>
+                        </li>
+                        <li>
+                            <a href="customer_login.php ">Customer </a>
+                        </li>
+                    </ul>
+                 
                     
                 </ul>
                 <ul class="side-nav" id="mobile-nav">
@@ -56,9 +79,10 @@
                     <li>
                         <a href="contact.php">Contact</a>
                     </li>
-                   
+                 </ul>  
 
             
         <!-- /.container -->
         </div>
+        
     </div>
