@@ -10,7 +10,7 @@
                         <a href="shop.php">Shop</a>
                     </li>
                     <li>
-                        <a href="login.php">Login</a>
+                        <a href="customer_login.php">Login</a>
                     </li>
                     <li>
                         <a href="admin">Admin</a>
@@ -24,7 +24,7 @@
                   
                     <li>
                         <a href="#">
-                            <i class="material-icons">person </i> 
+                            <i class="material-icons">person  </i> 
                            </a>
                           
                     </li>
@@ -33,10 +33,10 @@
 
                      <!-- BUTTON LINK -->
                      <li>
-                     <a href="/users/login" class="btn waves-effect waves-light">Sign In</a>
+                     <a href="login.php" class="btn waves-effect waves-light">Sign In</a>
                  </li>
                  <li>
-                     <a href="/users/register" class="btn waves-effect waves-light">Register</a>
+                     <a href="register.php" class="btn waves-effect waves-light">Register</a>
                  </li>
                     
                 </ul>
@@ -61,3 +61,4 @@
             
         <!-- /.container -->
         </div>
+    </div>

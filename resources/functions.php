@@ -74,8 +74,7 @@ function get_products() {
             <h4 class="card-title flow-text center-align"><a class="black-text"  href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
                 <h4 class="flow-text center-align">&#8377;{$row['product_price']}</h4>
                 <div class="card-action">
-                <a class="btn waves-effect wave-light" target="_parent" href="../resources/cart.php?add={$row['product_id']}">Add to Cart <i class="material-icons right">shopping_cart</i></a>
-            
+                <a class="btn waves-effect waves-light" target="_parent" href="../resources/cart.php?add={$row['product_id']}">Add to Cart <i class="material-icons right">shopping_cart</i></a>
             </div>
         </div>
     </div>
@@ -120,18 +119,16 @@ function get_products_in_cat_page() {
     while($row = fetch_array($query)) {
         $product_image = display_image($row['product_image']);
         $product_category = <<<DELIMETER
-        <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail">
-            <a href="item.php?id={$row['product_id']}" ><img src="../resources/{$product_image}" alt="img"> </a>
-            <div class="caption">
-                <h4 class="pull-right">&#8377;{$row['product_price']}</h4>
-                <h4><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a>
-                </h4>
-                <p>See more snippets like this online store item at <a target="_parent" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                <a class="btn btn-primary" target="_parent" href="../resources/cart.php?add={$row['product_id']}">Add to Cart <i class="material-icons right">shopping_cart</i></a>
-            </div>
-        
+        <div class="col s10 m6 l2">
+        <div class="card">
+        <a class="card-image" href="item.php?id={$row['product_id']}" ><img src="../resources/{$product_image}" alt="img"> </a>
+        <h4 class="card-title flow-text center-align"><a class="black-text"  href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
+        <h4 class="flow-text center-align">&#8377; {$row['product_price']}</h4>
+        <div class="card-action">
+       <a class="btn waves-effect waves-light" target="_parent" href="../resources/cart.php?add={$row['product_id']}">Add to Cart <i class="material-icons right">shopping_cart</i></a>
         </div>
+    
+    </div>
     </div>
 DELIMETER;
  
@@ -152,7 +149,7 @@ function get_products_in_shop_page() {
         <div class="card">
             <a class="card-image" href="item.php?id={$row['product_id']}" ><img src="../resources/{$product_image}" alt="img"> </a>
             <h4 class="card-title flow-text center-align"><a class="black-text"  href="item.php?id={$row['product_id']}">{$row['product_title']}</a></h4>
-            <h4 class="flow-text center-align">&#8377;{$row['product_price']}</h4>
+            <h4 class="flow-text center-align">&#8377; {$row['product_price']}</h4>
             <div class="card-action">
            <a class="btn waves-effect waves-light" target="_parent" href="../resources/cart.php?add={$row['product_id']}">Add to Cart <i class="material-icons right">shopping_cart</i></a>
             </div>
@@ -372,8 +369,7 @@ function update_product() {
         $send_update_query = query($query);
         confirm($send_update_query);
         set_message("New Product has been updated");
-
-        redirect("index.php?products");
+         redirect("index.php?products");
 
     }
 }
@@ -496,6 +492,52 @@ function get_reports() {
 DELIMETER;
         echo $report;
         }
+    }
+
+
+
+    function customer_register() {
+        
+        if(isset($_POST['submit'])) {
+            $name = escape_string($_POST['name']);
+            $email = escape_string($_POST['email']);
+            $password = escape_string($_POST['password']);
+            $address = escape_string($_POST['address']);
+            $state = escape_string($_POST['state']);
+            $city = escape_string($_POST['city']);
+            $zip = escape_string($_POST['zip']);
+            $mobile = escape_string($_POST['mobile']);
+
+            $query = query("INSERT INTO customers(name, email, password, address, state, city, zip, mobile) VALUES ('{$name}', '{$email}','{$password}', '{$address}', '{$state}', '{$city}', '{$zip}', '{$mobile}')");
+            confirm($query);
+            set_message("Congratulation {$name}! You have successfully registed.");
+
+            $_SESSION['name'] = $name;
+            redirect("index.php");
+
+        }else {
+            set_message("Oops! Something Went Wrong ! Try again later.");
+        }
+    }
+
+    function customer_login() {
+        if(isset($_POST['submit'])) {
+            $name = escape_string($_POST['name']);
+            $password = escape_string($_POST['password']);
+    
+        $query = query("SELECT name,password FROM customers WHERE name = '{$name}' AND password = '{$password}' ");
+        confirm($query);
+    
+        if(mysqli_num_rows($query) == 0) {
+            set_message("Username or password incorrect!");
+            redirect("customer_login.php");
+        }else {
+            $_SESSION['name'] = $name;
+            set_message("Welcome {$name}");
+            redirect("index.php");
+        
+        }
+    }
     }
 
 ?>

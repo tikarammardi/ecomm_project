@@ -10,11 +10,11 @@
             <h2 class="text-center"><?php display_message(); ?></h2>
             <div class="col s6 offset-s3">         
             <form class="" action="" method="post" enctype="multipart/form-data">
-            <?php login_user(); ?>
+            <?php customer_login(); ?>
         
                 <div class="input-field">
                 
-                    <input type="text" name="username" class="form-control"></label>
+                    <input type="text" name="name" class="form-control"></label>
                     <label data-error="Invalid" data-success="Valid" for="username">Username</label>
                 </div>
                  <div class="input-field">
@@ -22,7 +22,7 @@
                     <input type="text" name="password" class="form-control"></label>
                     <label  for="password">Password</label>
                 </div>
-                <p>No Account? <a href="/users/register">Register</a></p> 
+                <p>No Account? <a href="register.php">Register</a></p> 
                
 
                 <button type="submit"  name="submit" class="btn">Sign In</button>

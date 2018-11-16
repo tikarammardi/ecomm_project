@@ -56,17 +56,19 @@
 <tr class="order-total">
 <th>Order Total</th>
 <td><strong><span class="amount">&#8377;
+
 <?php 
  echo isset($_SESSION['item_total']) ? $_SESSION['item_total'] : $_SESSION['item_total'] = 0;
 ?>
 </span></strong> </td>
+
 </tr>
 
 
 </tbody>
 
 </table>
-
+<?php echo show_paypal(); ?>
 </div><!-- CART TOTALS-->
 
 
