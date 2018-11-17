@@ -31,26 +31,16 @@
 </table>
 
 
-
-
-
-
-
-
-
-
-
-                
-                 
+      
 
 
              </div>
 
             </div>
-            <!-- /.container-fluid -->
+            
 
         </div>
-        <!-- /#page-wrapper -->
+        
 
 
 

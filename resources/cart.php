@@ -91,7 +91,7 @@ if(isset($_GET['add'])) {
                 </tr>
 
                 <input type="hidden" name="item_name_{$item_name}" value="{$row['product_title']}">
-                <input type="hidden" name="item_number_{$item_number}" value="{$row['product_id']}5">
+                <input type="hidden" name="item_number_{$item_number}" value="{$row['product_id']}">
                 <input type="hidden" name="amount_{$amount}" value="{$row['product_price']}">
                 <input type="hidden" name="quantity_{$quantity}" value="{$value}">
             
@@ -172,7 +172,9 @@ DELIMETER;
             
             confirm($send_order);
                         
-            $insert_report = query("INSERT INTO reports (product_id,order_id,product_title, product_price, product_quantity) VALUES('{$id}','{$last_id}','{$product_title}','{$product_price}','{$value}')");
+            //$insert_report = query("INSERT INTO reports (product_id,order_id,product_title, product_price, product_quantity) VALUES('{$id}','{$last_id}','{$product_title}','{$product_price}','{$value}')");
+            $insert_report = query("INSERT INTO reports (product_id,order_id) VALUES('{$id}','{$last_id}')");
+           
             confirm($insert_report);
                 
                 }
@@ -187,6 +189,10 @@ DELIMETER;
         redirect("index.php");
     }  
 }
+
+
+
+
 
 ?>
 

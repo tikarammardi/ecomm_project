@@ -58,6 +58,16 @@ function fetch_array($result) {
     return mysqli_fetch_array($result);
 }
 
+function hash_password($password) {
+    return password_hash($password,PASSWORD_DEFAULT);
+}
+
+function compare_hash_password($password,$hash_password_form_db) {
+
+    return password_verify($password,$hash_password_form_db);
+
+}
+
 //*********************************FRONT END FUNCTIONS*************************************** */
 //get products
 
@@ -501,12 +511,14 @@ DELIMETER;
         if(isset($_POST['submit'])) {
             $name = escape_string($_POST['name']);
             $email = escape_string($_POST['email']);
-            $password = escape_string($_POST['password']);
+            $password = hash_password(escape_string($_POST['password']));
             $address = escape_string($_POST['address']);
             $state = escape_string($_POST['state']);
             $city = escape_string($_POST['city']);
             $zip = escape_string($_POST['zip']);
             $mobile = escape_string($_POST['mobile']);
+
+
 
             $query = query("INSERT INTO customers(name, email, password, address, state, city, zip, mobile) VALUES ('{$name}', '{$email}','{$password}', '{$address}', '{$state}', '{$city}', '{$zip}', '{$mobile}')");
             confirm($query);
@@ -521,23 +533,38 @@ DELIMETER;
     }
 
     function customer_login() {
+
         if(isset($_POST['submit'])) {
             $name = escape_string($_POST['name']);
             $password = escape_string($_POST['password']);
     
-        $query = query("SELECT name,password FROM customers WHERE name = '{$name}' AND password = '{$password}' ");
+        $query = query("SELECT name,password FROM customers WHERE name = '{$name}'");
         confirm($query);
     
-        if(mysqli_num_rows($query) == 0) {
-            set_message("Username or password incorrect!");
-            redirect("customer_login.php");
-        }else {
-            $_SESSION['name'] = $name;
-            
-            redirect("index.php");
+       
+            while($row = fetch_array($query)){
+
+                if(compare_hash_password($password,$row['password'])){
+
+                    $_SESSION['name'] = $name;
+                    redirect("index.php");
+                }
+                else{
+                    set_message("Oops!!! Username or password incorrect!");
+                    redirect("customer_login.php");
+                }
+               
+            }
+
+            if(mysqli_num_rows($query) == 0) {
+              set_message("Username Doesn't exist!!!");
+              redirect("customer_login.php");
+            } 
         
-        }
+        
     }
-    }
+}
+
+
 
 ?>
