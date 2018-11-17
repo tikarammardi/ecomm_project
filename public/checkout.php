@@ -68,7 +68,7 @@
 </tbody>
 
 </table>
-<?php echo show_paypal(); ?>
+<button name="place_order" class="btn waves-effect waves-light right" >Place Order </button>
 </div><!-- CART TOTALS-->
 
 
