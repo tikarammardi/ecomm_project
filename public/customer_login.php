@@ -6,7 +6,7 @@
     <div class="container">
 
       <header>
-            <h1 class="text-center">Login</h1>
+            <h1 class="text-center">Customer Login</h1>
             <h2 class="text-center"><?php display_message(); ?></h2>
             <div class="col s6 offset-s3">         
             <form class="" action="" method="post" enctype="multipart/form-data">

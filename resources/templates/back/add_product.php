@@ -59,10 +59,7 @@
 <aside id="admin_sidebar" class="col-md-4">
 
      
-     <div class="form-group">
-      
-        <input type="submit" name="publish" class="btn " value="Publish">
-    </div>
+    
 
 
      <!-- Product Categories-->
@@ -111,7 +108,10 @@
       
     </div>
 
-
+ <div class="form-group">
+      
+      <input type="submit" name="publish" class="btn " value="Add">
+  </div>
 
 </aside><!--SIDEBAR-->
 

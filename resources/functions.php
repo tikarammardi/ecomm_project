@@ -178,18 +178,29 @@ function login_user() {
         $username = escape_string($_POST['username']);
         $password = escape_string($_POST['password']);
 
-    $query = query("SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}' ");
+    $query = query("SELECT * FROM users WHERE username = '{$username}'");
     confirm($query);
 
-    if(mysqli_num_rows($query) == 0) {
-        set_message("Username or password incorrect!");
-        redirect("login.php");
-    }else {
+while($row = fetch_array($query)){
+
+    if(compare_hash_password($password,$row['password'])){
+
         $_SESSION['username'] = $username;
-        set_message("Welcome {$username}");
+        
         redirect("admin");
-    
     }
+    else{
+        set_message("Oops!!! Username or password incorrect!");
+        redirect("login.php");
+    }
+   
+}
+
+if(mysqli_num_rows($query) == 0) {
+  set_message("Username Doesn't exist!!!");
+  redirect("login.php");
+} 
+  
 }
 }
 
@@ -462,7 +473,7 @@ function add_user() {
 
     $username  =   escape_string($_POST['username']);
     $email     =   escape_string($_POST['email']);
-    $password  =   escape_string($_POST['password']);
+    $password  =  hash_password(escape_string($_POST['password']));
     //$user_photo = escape_string($_FILES['file']['name']);
     //$photo_temp = escape_string($_FILES['file']['tmp_name']);
 

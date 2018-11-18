@@ -26,7 +26,7 @@
                         </a>
                         
                     </li>
-                    <li><?php if(isset($_SESSION['name'])) echo $_SESSION['name']; ?></li>
+                    <li><?php echo $_SESSION['name'] ?></li>
 
                    
                     <li>
