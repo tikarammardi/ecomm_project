@@ -11,7 +11,7 @@
                 <ul>
                     <li><a class="grey-text text-lighten-3" href="http://www.traversymedia.com/">Travesy Media</a></li>
                     <li><a class="grey-text text-lighten-3" href="https://codingfaculty.com/">Coding Faculty</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://github.com/tikarammardi"><i class="material-icons teal-text">github</i></a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://stackoverflow.com/">Stack Overflow </a></li>
                     <li><a class="grey-text text-lighten-3" href="#!"></a></li>
                 </ul>
             </div>

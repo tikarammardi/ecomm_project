@@ -28,4 +28,4 @@ Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the [
 
 ## get request information after successfully transaction
 
-## ?tx=2324433&amt=345&cc=INR&st=Completed
+## thank_you.php?tx=2324433&amt=345&cc=INR&st=Completed

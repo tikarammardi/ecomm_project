@@ -60,7 +60,7 @@ CREATE TABLE `customers` (
   `city` varchar(255) NOT NULL,
   `zip` int(11) NOT NULL,
   `mobile` bigint(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);-- ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `customers`

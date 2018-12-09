@@ -8,8 +8,7 @@
        
             process_transaction();
             //session_destroy();
-
-   
+  
  
 ?>
 
