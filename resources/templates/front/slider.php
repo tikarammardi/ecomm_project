@@ -1,24 +1,17 @@
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                </div>
-                <div class="item">
-                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                </div>
-                <div class="item">
-                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                </div>
-            </div>
-            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div>
+<div class="carousel carousel-slider" data-indicators="true">
+      <a class="carousel-item" href="#one!">
+        <img src="images/slide-01.jpg">
+      </a>
+      <a class="carousel-item" href="#two!">
+        <img src="images/slide-02.jpg">
+      </a>
+      <a class="carousel-item" href="#three!">
+        <img src="images/slide-03.jpg">
+      </a>
+      <a class="carousel-item" href="#four!">
+        <img src="images/slide-04.jpg">
+      </a>
+      <a class="carousel-item" href="#five!">
+        <img src="images/slide-05.jpg">
+      </a>
+    </div>

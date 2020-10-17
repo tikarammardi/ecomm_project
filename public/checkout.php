@@ -1,5 +1,5 @@
 <?php require_once("../resources/config.php") ;?>
-<?php require_once("cart.php"); ?>
+
 <?php include(TEMPLATE_FRONT . DS . "header.php");?>
     <div class="container">
 
@@ -16,7 +16,7 @@
   <input type="hidden" name="cmd" value="_cart">
   <input type="hidden" name="business" value="tikarammardi@business.com">
   <input type="hidden" name="currency_code" value="INR">
-    <table class="table table-striped">
+    <table class="table striped">
         <thead>
           <tr>
            <th>Product</th>
@@ -40,7 +40,7 @@
 <div class="col-xs-4 pull-right ">
 <h2>Cart Totals</h2>
 
-<table class="table table-bordered" cellspacing="0">
+<table class="table " cellspacing="0">
 
 <tr class="cart-subtotal">
 <th>Items:</th>
@@ -55,18 +55,20 @@
 
 <tr class="order-total">
 <th>Order Total</th>
-<td><strong><span class="amount">&#36;
+<td><strong><span class="amount">&#8377;
+
 <?php 
  echo isset($_SESSION['item_total']) ? $_SESSION['item_total'] : $_SESSION['item_total'] = 0;
 ?>
 </span></strong> </td>
+
 </tr>
 
 
 </tbody>
 
 </table>
-
+<button name="place_order" class="btn waves-effect waves-light right" >Place Order </button>
 </div><!-- CART TOTALS-->
 
 
